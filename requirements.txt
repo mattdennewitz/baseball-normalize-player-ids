@@ -1,0 +1,4 @@
+click==6.2
+schematics==1.1.1
+six==1.10.0
+unicodecsv==0.14.1
