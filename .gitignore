@@ -60,3 +60,4 @@ target/
 *.csv
 *.sql
 data/
+.vscode
