@@ -1,15 +1,6 @@
-#!/usr/bin/env python
-
 import os
 from setuptools import setup, find_packages
 
-import pip.download
-from pip.req import parse_requirements
-
-
-reqs_txt = os.path.join(os.path.dirname(__file__), 'requirements.txt')
-pip_reqs = parse_requirements(reqs_txt, session=pip.download.PipSession())
-pip_reqs = [str(obj.req) for obj in pip_reqs]
 
 setup(
     name = 'mlb-normalize-player-ids',
@@ -23,11 +14,14 @@ setup(
     author_email = 'mattdennewitz@gmail.com',
     url = 'https://github.com/mattdennewitz/mlb-normalize-player-ids',
 
-    install_requires = pip_reqs,
+    install_requires = [
+        'click',
+        'schematics',
+    ],
 
     packages = find_packages(),
 
     scripts = [
-        'scripts/bid-normalize-register'
+        'bin/bid-normalize-register'
     ],
 )
