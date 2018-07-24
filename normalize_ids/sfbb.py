@@ -65,5 +65,6 @@ def normalize_sfbb(row):
     model.key_yahoo = row['YAHOOID']
     model.key_rotowire = row['ROTOWIREID']
     model.key_fanduel = row['FANDUELID']
+    model.key_ottoneu = row['OTTONEUID']
 
     return model

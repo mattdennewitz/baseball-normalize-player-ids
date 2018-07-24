@@ -52,6 +52,7 @@ class Row(Model):
     key_retro = StringType()
     key_rotowire = StringType()
     key_yahoo = StringType()
+    key_ottoneu = StringType()
 
 
 MODEL_FIELDNAMES = list(filter(lambda k: not k.startswith('_'),

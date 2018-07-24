@@ -7,7 +7,7 @@ from setuptools import setup
 
 setup(
     name='baseball-normalize-player-ids',
-    version='2018.7.24.1',
+    version='2018.7.24.2',
     description=("""
         Translates known baseball player id registers
         (Chadwick, Smart Fantasy Baseball, Crunchtime)

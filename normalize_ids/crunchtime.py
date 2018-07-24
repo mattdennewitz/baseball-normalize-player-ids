@@ -41,7 +41,7 @@ def normalize_crunchtime(row):
 
     # combine positions from each source, remove empty
     positions = (row['espn_pos'], row['cbs_pos'], row['mlb_pos'],
-                 row['nfbc_pos'], row['yahoo_pos'])
+                 row['nfbc_pos'], row['yahoo_pos'], row['ottoneu_pos'])
     model.pos = ','.join(set(filter(lambda p: p.strip(), positions)))
 
     model.key_mlbam = row['mlb_id']
@@ -51,7 +51,8 @@ def normalize_crunchtime(row):
     model.key_espn = row['espn_id']
     model.key_nfbc = row['nfbc_id']
     model.key_retro = row['retro_id']
-    model.yahoo_id = row['yahoo_id']
+    model.key_yahoo = row['yahoo_id']
+    model.key_ottoneu = row['ottoneu_id']
 
     fg_id = row['fg_id']
 
