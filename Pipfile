@@ -8,6 +8,8 @@ schematics = "*"
 click = "*"
 
 [dev-packages]
+pylint = "*"
+rope = "*"
 
 [requires]
 python_version = "3.7"

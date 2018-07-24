@@ -14,20 +14,22 @@ Currently supports CSV registers from:
 Install this script via `pip`:
 
 ```shell
-$ pip install -e git+git@github.com:mattdennewitz/mlb-normalize-player-ids.git#egg=mlb-normalize-player-ids
+$ pip install -e git+git@github.com:mattdennewitz/baseball-normalize-player-ids.git#egg=baseball-normalize-player-ids
 ```
 
 or clone this repo and work with it directly.
 
 ## Usage
 
-Once installed, use `bid-normalize-register` to normalize schemas.
-`bid-normalize-register` understands three modes:
+Once installed, use `bid_normalize_register.py` to normalize schemas.
+`bid_normalize_register` understands three conversion types:
 
 - `chadwick`, for the Chadwick Register
 - `sfbb`, for Smart Fantasy Baseball's Player ID map
 - `crunchtime`, for Crunchtime's MLB Player Names and IDs map
 
+Example:
+
 ```shell
-$ bid-normalize-register chadwick -i /path/to/chadwick-register.csv /path/to/output.csv
+$ bid_normalize_register.py -s chadwick -i /path/to/chadwick-register.csv /path/to/output.csv
 ```

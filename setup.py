@@ -1,27 +1,32 @@
-import os
-from setuptools import setup, find_packages
+"""
+Install this application
+"""
+
+from setuptools import setup
 
 
 setup(
-    name = 'mlb-normalize-player-ids',
-    version = '0.1.0',
-    description = ("""
+    name='baseball-normalize-player-ids',
+    version='2018.7.24.1',
+    description=("""
         Translates known baseball player id registers
         (Chadwick, Smart Fantasy Baseball, Crunchtime)
         into a unified schema
     """),
-    author = 'Matt Dennewitz',
-    author_email = 'mattdennewitz@gmail.com',
-    url = 'https://github.com/mattdennewitz/mlb-normalize-player-ids',
+    author='Matt Dennewitz',
+    author_email='mattdennewitz@gmail.com',
+    url='https://github.com/mattdennewitz/baseball-normalize-player-ids',
 
-    install_requires = [
+    install_requires=[
         'click',
         'schematics',
     ],
 
-    packages = find_packages(),
+    packages=[
+        'normalize_ids',
+    ],
 
-    scripts = [
-        'bin/bid-normalize-register'
+    scripts=[
+        'bin/bid_normalize_register.py'
     ],
 )
