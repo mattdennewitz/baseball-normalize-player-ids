@@ -7,12 +7,14 @@ import csv
 import click
 
 from normalize_ids import (MODEL_FIELDNAMES,
+                           normalize_bpro,
                            normalize_chadwick,
                            normalize_crunchtime,
                            normalize_sfbb)
 
 
 TRANSLATORS = {
+    'bpro': normalize_bpro,
     'chadwick': normalize_chadwick,
     'crunchtime': normalize_crunchtime,
     'sfbb': normalize_sfbb,
@@ -23,13 +25,13 @@ TRANSLATORS = {
               type=click.Choice(TRANSLATORS.keys()))
 @click.option('-i', 'input_path', required=True,
               type=click.Path(exists=True, dir_okay=False))
-@click.argument('output_fp', type=click.File('w'), required=True)
+@click.option('-o', 'output_fp', type=click.File('w'), required=True)
 def normalize_id_registry(system, input_path, output_fp):
     """Normalizes a given ID registry
     """
 
     # watch encoding from crunchtime :/
-    encoding = 'latin-1' if system == 'crunchtime' else 'utf-8'
+    encoding = 'latin-1' if system in ('crunchtime', 'bpro') else 'utf-8'
 
     reader = csv.DictReader(open(input_path, encoding=encoding))
     writer = csv.DictWriter(output_fp, MODEL_FIELDNAMES)

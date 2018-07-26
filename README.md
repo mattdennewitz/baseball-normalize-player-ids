@@ -5,6 +5,7 @@ baseball player ID registers.
 
 Currently supports CSV registers from:
 
+- [Baseball Prospectus](https://legacy.baseballprospectus.com/sortable/playerid_list.php)
 - [Chadwick Register](http://chadwick-bureau.com/the-register/)
 - [Smart Fantasy Baseball](http://www.smartfantasybaseball.com/tools/)
 - [Crunchtime Baseball](http://crunchtimebaseball.com/baseball_map.html)
@@ -24,6 +25,7 @@ or clone this repo and work with it directly.
 Once installed, use `bid_normalize_register.py` to normalize schemas.
 `bid_normalize_register` understands three conversion types:
 
+- `bpro`, for Baseball Prospectus
 - `chadwick`, for the Chadwick Register
 - `sfbb`, for Smart Fantasy Baseball's Player ID map
 - `crunchtime`, for Crunchtime's MLB Player Names and IDs map
@@ -31,5 +33,5 @@ Once installed, use `bid_normalize_register.py` to normalize schemas.
 Example:
 
 ```shell
-$ bid_normalize_register.py -s chadwick -i /path/to/chadwick-register.csv /path/to/output.csv
+$ bid_normalize_register.py normalize -s chadwick -i /path/to/chadwick-register.csv -o /path/to/output.csv
 ```
